@@ -1,0 +1,33 @@
+<!-- {% if messages %}
+{% for message in messages %}
+<div>
+  <<strong> {{message|safe}}</strong>
+  </div>
+  {% endfor %}
+{% else %}
+{{order}}
+<form method='post'>
+    {% csrf_token %}
+    <label> Upload a file </label>
+    <input type='file' name='file'>
+    <p>only accept csv file</p>
+    <button type="submit" name="upload"></button>
+</form>
+{% endif %} -->
+
+
+
+<form  method="POST" enctype="multipart/form-data" class="form-horizontal">
+{% csrf_token %}
+<div class="form-group">
+    <label for="name" class="col-md-3 col-sm-3 col-xs-12 control-label">File: </label>
+    <div class="col-md-8">
+        <input type="file" name="file" id="file" required="True" class="form-control">
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3" style="margin-bottom:10px;">
+         <button class="btn btn-primary"> <span class="glyphicon glyphicon-upload" style="margin-right:5px;"></span>Upload </button>
+    </div>
+</div>
+</form>
