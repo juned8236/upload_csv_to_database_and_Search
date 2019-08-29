@@ -46,3 +46,4 @@ def upload_csv(request,*args,**kwargs):
         CarInsurance     =column[18])
     context={}
     return render(request,template,context)
+    # kjsdklj
